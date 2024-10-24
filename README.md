@@ -70,3 +70,7 @@ password: password
 -----------------------------------------------------
 ```
 
+## ➤ Credits
+
+https://github.com/VoidSec/SolarPuttyDecrypt
+https://voidsec.com/solarputtydecrypt/
