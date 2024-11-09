@@ -78,7 +78,7 @@ func main() {
 }
 
 type cipherStruct struct {
-	chiperText    string
+	cipherText    string
 	base64Array   []byte
 	salt          []byte
 	iv            []byte
@@ -99,7 +99,7 @@ func newCipherStruct(cipherText string) (cipherStruct, error) {
 	encryptedData := array[48:]
 
 	return cipherStruct{
-		chiperText:    cipherText,
+		cipherText:    cipherText,
 		base64Array:   array,
 		salt:          salt,
 		iv:            iv,
@@ -309,7 +309,7 @@ func getLineCount(file_path string) int {
 }
 
 func fileExists(file string) (bool, error) {
-	file_stat, err := os.Stat(file)
+	fileStat, err := os.Stat(file)
 	if errors.Is(err, os.ErrNotExist) {
 		return false, fmt.Errorf("file %s does not exist", file)
 	}
@@ -318,7 +318,7 @@ func fileExists(file string) (bool, error) {
 		return false, err
 	}
 
-	if file_stat.IsDir() {
+	if fileStat.IsDir() {
 		return false, fmt.Errorf("%s is a directory", file)
 	}
 	return true, nil
